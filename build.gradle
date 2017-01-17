@@ -1,0 +1,32 @@
+apply plugin: 'java'
+apply plugin: 'scala'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+
+mainClassName = "petrukhnov.konstantin.scalagradle.Main"
+group 'petrukhnov.konstantin.scalagradle'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots/'
+    }
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.22'
+    compile 'ch.qos.logback:logback-classic:1.1.8'
+    compile 'org.scala-lang:scala-library:2.12.1'
+    testCompile 'junit:junit:4.12'
+}
